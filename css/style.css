@@ -15,8 +15,8 @@ h2, .h2 {
         text-align: center;
         width: 100%;
     }
-    .nav .navbar-nav {
-     font-size: 20px;
-     line-height: 25px;
+    navbar .collapse ul li a {
+        line-height: 30px;
+        font-size: 20px;
     }
 }
