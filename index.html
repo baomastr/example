@@ -13,36 +13,22 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
     <!-- <link href="css/bootstrap.css" rel="stylesheet"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
     
     <!-- Less -->
     <link rel="stylesheet/less" href="less/font-awesome.less"/>
     <!-- <link rel="stylesheet/less" href="css/style.less"/> -->
     <script type="text/javascript" src="js/less.js"></script>
     <link rel="stylesheet" href="css/style.css" />
-    <script type="text/javascript">
-        $(document).ready(function(){
-
-        $.ajax({
-        method: "GET",
-        url: 'https://api.instagram.com/v1/tags/webdesign/media/recent?client_id=495ac0fa21fc437c9b1d65cfa400798f&count=3',
-        dataType: "jsonp",
-        jsonp: "callback",
-        jsonpCallback: "jsonpcallback",
-        success: function(data) {
-            $.each(data.data, function(i, item) {
-                $('#portfolio-hi-'+(i+1)).attr("src", item.images.standard_resolution.url);
-                $('#portfolio-lo-'+(i+1)).attr("src", item.images.low_resolution.url);
-			});
-			}
-		});
-	
-        $("body").scrollspy({
-          target: "#myNavbar",
-          offset: 1
-        });
-});
-
-    </script>
+    
 </head>
 
 <body>
@@ -363,14 +349,29 @@
             </div>
         </div>
     </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="js/bootstrap.js"></script>
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.js"></script>
-    <![endif]-->
+<script type="text/javascript">
+        $(document).ready(function(){
+
+        $.ajax({
+        method: "GET",
+        url: 'https://api.instagram.com/v1/tags/webdesign/media/recent?client_id=495ac0fa21fc437c9b1d65cfa400798f&count=3',
+        dataType: "jsonp",
+        jsonp: "callback",
+        jsonpCallback: "jsonpcallback",
+        success: function(data) {
+            $.each(data.data, function(i, item) {
+                $('#portfolio-hi-'+(i+1)).attr("src", item.images.standard_resolution.url);
+                $('#portfolio-lo-'+(i+1)).attr("src", item.images.low_resolution.url);
+			});
+			}
+		});
+	
+        $("body").scrollspy({
+          target: "#myNavbar",
+          offset: 1
+        });
+});
+
+    </script>
 </body>
 </html>
