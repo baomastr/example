@@ -11,7 +11,8 @@ h2, .h2 {
     font-size: 20px;
 }
 @media screen and (max-width: 767px) {
-            .navbar-collapse .pull-right .collapse .in {
-                width: 100%;
-            }
-        }
+    .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+        text-align: center;
+        width: 100%;
+    }
+}
